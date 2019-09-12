@@ -4,6 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './header/header.component';
 
+import { PhotoService } from '../shared/services/photo.service';
+
 
 @NgModule({
     declarations: [
@@ -17,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
         NgbModule,
         HeaderComponent
     ],
-    providers: [],
+    providers: [
+        PhotoService
+    ],
 })
 export class SharedModule { }
