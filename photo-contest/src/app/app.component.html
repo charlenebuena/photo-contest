@@ -1,2 +1,6 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header
+    (voteEvent)="voteEventTriggered()"
+    (winnersEvent)="winnersEventTriggered()">
+</app-header>
+<app-image-list *ngIf="showImageList"></app-image-list>
+<app-winners *ngIf="showWinners"></app-winners>

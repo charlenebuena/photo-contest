@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Entry } from '../models/photo-structure';
+import { photoData } from '../models/photo-data';
 
-@Injectable({
-  providedIn: 'root',
-})
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+@Injectable()
 export class PhotoService {
 
-    constructor() { }
+    constructor(
+        private http: HttpClient,
+    ) { }
 
-
+    getPhotos(): Observable<Entry[]> {
+        return of(photoData);
+        // return this.http.get<Entry[]>()
+    }
 }

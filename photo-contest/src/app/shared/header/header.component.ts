@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+    @Output() voteEvent = new EventEmitter();
+    @Output() winnersEvent = new EventEmitter();
     title = 'photo-contest';
+
+    onVoteClick() {
+        this.voteEvent.emit();
+    }
+
+    onWinnersClick() {
+        this.winnersEvent.emit();
+    }
 }

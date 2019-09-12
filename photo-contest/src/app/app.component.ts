@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'photo-contest';
+    showImageList = false;
+    showWinners = false;
+
+    voteEventTriggered() {
+        this.showImageList = true;
+        this.showWinners = false;
+    }
+
+    winnersEventTriggered() {
+        this.showWinners = true;
+        this.showImageList = false;
+    }
 }
