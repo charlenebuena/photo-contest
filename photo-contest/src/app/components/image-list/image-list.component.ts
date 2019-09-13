@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../../shared/services/photo.service';
 import { Entry } from '../../shared/models/photo-structure';
-import { UUID } from 'angular2-uuid';
 
 @Component({
     selector: 'app-image-list',
@@ -15,7 +14,6 @@ export class ImageListComponent implements OnInit{
     photos: Entry[] | any  = [];
     showPhotos = false;
     totalRatings = null;
-    userId = null;
 
     constructor(
         private photoService: PhotoService
@@ -52,13 +50,12 @@ export class ImageListComponent implements OnInit{
     }
 
     onCurrentUser() {
-        console.log(localStorage.getItem('userRatings'));
-        // this.getPhotos();
+        this.photos = localStorage.getItem('userRatings') ? JSON.parse(localStorage.getItem('userRatings')) : null;
         this.showPhotos = true;
     }
 
     onNewUser() {
-        this.userId = UUID.UUID();
+        localStorage.removeItem('userRatings');
         this.getPhotos();
         this.showPhotos = true;
     }

@@ -2,10 +2,11 @@
     <div class="spinner-border m-5" role="status" *ngIf="isLoading"></div>
 
     <div class="user-btns" *ngIf="!showPhotos">
-        <a class="btn btn-lg btn-primary new-user" (click)="onNewUser()">New User</a>
-        <a class="btn btn-lg btn-primary" *ngIf="showCurrentUser" (click)="onCurrentUser()">Current User</a>
+        <button type="button" class="btn btn-lg btn-primary new-user" (click)="onNewUser()">New User</button>
+        <button type="button" class="btn btn-lg btn-primary" *ngIf="showCurrentUser" (click)="onCurrentUser()">Current User</button>
     </div>
 
+    <button type="button" class="btn btn-outline-secondary" *ngIf="showPhotos" (click)="showPhotos = !showPhotos">BACK</button>
     <div class="cards-holder row" *ngIf="showPhotos">
         <div class="card col-6 col-md-5" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
             <img src="{{'../../../assets/images/photo-' + photo._id +  '.jpg'}}" class="card-img-top" alt="...">
@@ -20,7 +21,7 @@
                         max="5">
                     </ngb-rating>
                 </div>
-                <a class="btn btn-sm btn-primary" (click)="onClearVote(i)">Clear Vote</a>
+                <button type="button" class="btn btn-sm btn-primary" (click)="onClearVote(i)">Clear Vote</button>
             </div>
         </div>
     </div>

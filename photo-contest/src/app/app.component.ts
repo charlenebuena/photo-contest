@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ImageListComponent } from './components/image-list/image-list.component';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
     showImageList = false;
     showWinners = false;
+
+    @ViewChild(ImageListComponent, {static: false}) imageList: ImageListComponent;
 
     voteEventTriggered() {
         this.showImageList = true;

@@ -1,5 +1,5 @@
 .row {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .card {
@@ -36,6 +36,10 @@ ngb-rating.d-inline-flex {
 
 .new-user {
     margin-right: 10px;
+}
+
+button.btn.btn-outline-secondary {
+    margin: 20px 5px;
 }
 
 /* Heart Icons */
