@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="cards-holder">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+    <div class="cards-holder row">
+        <div class="card col-6 col-md-5" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
+            <img src="{{'../../../assets/images/photo-' + photo._id +  '.jpg'}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{photo.title}}</h5>
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Clear Vote</a>
             </div>
         </div>
     </div>

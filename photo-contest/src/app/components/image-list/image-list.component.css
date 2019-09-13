@@ -1,0 +1,15 @@
+.row {
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20px;
+}
+
+.container {
+    margin: 60px auto;
+}
+
+.card.col-6.col-md-5 {
+    padding: 0px;
+}
