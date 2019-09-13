@@ -11,114 +11,114 @@ export const photoData: Entry[] = [
     },
     {
         _id: 3,
-        title: 'Oranges',
+        title: 'Wave',
     },
     {
         _id: 4,
-        title: 'Oranges',
+        title: 'Cat',
     },
     {
         _id: 5,
-        title: 'Oranges',
+        title: 'Winding Road',
     },
     {
         _id: 6,
-        title: 'Oranges',
+        title: 'Pink Sunset',
     },
     {
         _id: 7,
-        title: 'Oranges',
+        title: 'Clock Tower',
     },
     {
         _id: 8,
-        title: 'Oranges',
+        title: 'Rock Formation',
     },
     {
         _id: 9,
-        title: 'Oranges',
+        title: 'Winter Is Coming',
     },
     {
         _id: 10,
-        title: 'Oranges',
+        title: 'Ocean',
     },
     {
         _id: 11,
-        title: 'Oranges',
+        title: 'Street',
     },
     {
         _id: 12,
-        title: 'Oranges',
+        title: 'Minimalist Apartment',
     },
     {
         _id: 13,
-        title: 'Oranges',
+        title: 'The Beverly Hills',
     },
     {
         _id: 14,
-        title: 'Oranges',
+        title: 'City Life',
     },
     {
         _id: 15,
-        title: 'Oranges',
+        title: 'Taxi Cab',
     },
     {
         _id: 16,
-        title: 'Oranges',
+        title: 'Bell Tower',
     },
     {
         _id: 17,
-        title: 'Oranges',
+        title: 'Random Corner',
     },
     {
         _id: 18,
-        title: 'Oranges',
+        title: 'Sunset Skyscraper',
     },
     {
         _id: 19,
-        title: 'Oranges',
+        title: 'Halloween',
     },
     {
         _id: 20,
-        title: 'Oranges',
+        title: 'Night Sky ft. Mountain',
     },
     {
         _id: 21,
-        title: 'Oranges',
+        title: 'Sunflowers',
     },
     {
         _id: 22,
-        title: 'Oranges',
+        title: 'Mountain Range',
     },
     {
         _id: 23,
-        title: 'Oranges',
+        title: 'Bliss',
     },
     {
         _id: 24,
-        title: 'Oranges',
+        title: 'Cacti',
     },
     {
         _id: 25,
-        title: 'Oranges',
+        title: 'Salad',
     },
     {
         _id: 26,
-        title: 'Oranges',
+        title: 'Garden of Eden',
     },
     {
         _id: 27,
-        title: 'Oranges',
+        title: 'Light Bulb',
     },
     {
         _id: 28,
-        title: 'Oranges',
+        title: 'Water Droplets',
     },
     {
         _id: 29,
-        title: 'Oranges',
+        title: 'Camping At Night',
     },
     {
         _id: 30,
-        title: 'Oranges',
+        title: 'Pre-Sunrise',
     },
 ];

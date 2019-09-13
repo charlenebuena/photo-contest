@@ -9,6 +9,7 @@ import { Entry } from '../../shared/models/photo-structure';
 })
 export class ImageListComponent implements OnInit{
     photos: Entry[]  = [];
+    isLoading = false;
 
     constructor(
         private photoService: PhotoService
@@ -19,9 +20,11 @@ export class ImageListComponent implements OnInit{
     }
 
     getPhotos() {
+        this.isLoading = true;
         this.photoService.getPhotos().subscribe(
             resp => this.photos = resp,
-            err => console.error(err)
+            err => console.error(err),
+            () => this.isLoading = false
         );
     }
 }

@@ -13,3 +13,8 @@
 .card.col-6.col-md-5 {
     padding: 0px;
 }
+
+.spinner-border.m-5 {
+    display: flex !important;
+    margin: 0 auto !important;
+}

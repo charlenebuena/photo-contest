@@ -1,10 +1,13 @@
 <div class="container">
+    <div class="spinner-border m-5" role="status" *ngIf="isLoading"></div>
     <div class="cards-holder row">
         <div class="card col-6 col-md-5" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
             <img src="{{'../../../assets/images/photo-' + photo._id +  '.jpg'}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{photo.title}}</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                <div class="title-stars">
+                    <h5 class="card-title">{{photo.title}}</h5>
+                    <i class="fa fa-scissors"></i>
+                </div>
                 <a href="#" class="btn btn-primary">Clear Vote</a>
             </div>
         </div>
