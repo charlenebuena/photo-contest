@@ -1,4 +1,4 @@
-<div class="container">
+<div class="cont">
     <div class="spinner-border m-5" role="status" *ngIf="isLoading"></div>
 
     <div class="user-btns" *ngIf="!showPhotos">
@@ -8,11 +8,10 @@
 
     <button type="button" class="btn btn-outline-secondary" *ngIf="showPhotos" (click)="showPhotos = !showPhotos">BACK</button>
     <div class="cards-holder row" *ngIf="showPhotos">
-        <div class="card col-6 col-md-5" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
+        <div class="card col-sm-2" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
             <img src="{{'../../../assets/images/photo-' + photo._id +  '.jpg'}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <div class="title-stars">
-                    <h5 class="card-title">{{photo.title}}</h5>
                     <ngb-rating 
                         [(rate)]="photo.photoRating" 
                         [starTemplate]="t" 
@@ -20,6 +19,7 @@
                         (rateChange)="onChangeRate()"
                         max="5">
                     </ngb-rating>
+                    <h5 class="card-title">{{photo.title}}</h5>
                 </div>
                 <button type="button" class="btn btn-sm btn-primary" (click)="onClearVote(i)">Clear Vote</button>
             </div>

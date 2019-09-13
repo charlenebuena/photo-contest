@@ -1,62 +1,77 @@
-.row {
-    justify-content: space-between;
+@media only screen and (min-width: 480px) {
+        
+    .row {
+        justify-content: space-between;
+    }
+
+    .card {
+        margin: 10px;
+        min-width: 150px
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .cont {
+        margin: 60px 50px;
+    }
+
+    .card.col-6.col-md-5,
+    .col-sm-2 {
+        padding: 0px;
+    }
+
+    .spinner-border.m-5 {
+        display: flex !important;
+        margin: 0 auto !important;
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    ngb-rating.d-inline-flex {
+        margin-top: -10px;
+    }
+
+    .user-btns {
+        display: flex;
+        justify-content: center;
+    }
+
+    .new-user {
+        margin-right: 10px;
+    }
+
+    button.btn.btn-outline-secondary {
+        margin: 20px 5px;
+    }
+
+    /* Heart Icons */
+    .star {
+        position: relative;
+        display: inline-block;
+        font-size: 23px;
+        color: #d3d3d3;
+    }
+
+    .full {
+        color: red;
+    }
+
+    .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: red;
+    }
+
 }
 
-.card {
-    margin: 20px;
-}
 
-.container {
-    margin: 60px auto;
-}
-
-.card.col-6.col-md-5 {
-    padding: 0px;
-}
-
-.spinner-border.m-5 {
-    display: flex !important;
-    margin: 0 auto !important;
-}
-
-.title-stars {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-ngb-rating.d-inline-flex {
-    margin-top: -10px;
-}
-
-.user-btns {
-    display: flex;
-    justify-content: center;
-}
-
-.new-user {
-    margin-right: 10px;
-}
-
-button.btn.btn-outline-secondary {
-    margin: 20px 5px;
-}
-
-/* Heart Icons */
-.star {
-    position: relative;
-    display: inline-block;
-    font-size: 23px;
-    color: #d3d3d3;
-}
-
-.full {
-    color: red;
-}
-
-.half {
-    position: absolute;
-    display: inline-block;
-    overflow: hidden;
-    color: red;
+@media only screen and (max-width: 768px) {
+    .card {
+        min-width: 200px;
+    }
 }
