@@ -18,3 +18,41 @@
     display: flex !important;
     margin: 0 auto !important;
 }
+
+.title-stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ngb-rating.d-inline-flex {
+    margin-top: -10px;
+}
+
+.user-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.new-user {
+    margin-right: 10px;
+}
+
+/* Heart Icons */
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 23px;
+    color: #d3d3d3;
+}
+
+.full {
+    color: red;
+}
+
+.half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: red;
+}
