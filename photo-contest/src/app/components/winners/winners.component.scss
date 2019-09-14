@@ -15,25 +15,18 @@
 }
 
 .spinner-border.m-5 {
-    display: flex !important;
-    margin: 0 auto !important;
+    @include spinner(flex !important, 0 auto !important);
+    
 }
 
-/* Heart Icons */
 .star {
-    position: relative;
-    display: inline-block;
-    font-size: 23px;
-    color: #d3d3d3;
+    @extend %starShared;
 }
 
 .full {
-    color: red;
+    color: $heartColor;
 }
 
 .half {
-    position: absolute;
-    display: inline-block;
-    overflow: hidden;
-    color: red;
+    @extend %halfShared;
 }

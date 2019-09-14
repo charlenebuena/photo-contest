@@ -2,18 +2,13 @@
 
 .jumbotron {
     border-radius: 0 !important;
-    background: $indigoheader;
+    background: $indigoHeader;
     margin: 0px;
     color: $textColor;
 }
 
 .btn-primary {
-    background-color: $primary;
-    border: $primary;
-
-    &:hover {
-        background-color: $primaryHover;
-    }
+    @include primaryBtn();
 
     &.new-voter {
         margin-right: 5px;

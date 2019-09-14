@@ -1,0 +1,87 @@
+@import '../../../styles';
+
+@media only screen and (min-width: 480px) {
+
+    .cont {
+        margin: 60px 50px;
+
+        .spinner-border.m-5 {
+            @include spinner(flex !important, 0 auto !important);
+        }
+
+        .user-btns {
+            @include flexJustify(flex, center);
+
+            .new-user {
+                margin-right: 10px;
+            }
+
+            .current-user,
+            .new-user {
+                @include primaryBtn();
+            }
+        }
+
+        .vote-btns {
+            @include flexJustify(flex, space-between);
+            margin: 20px 0px;
+
+            .submit-votes {
+                @include primaryBtn();
+            }
+        }
+
+        .row {
+            justify-content: space-between;
+    
+            .card {
+                margin: 10px;
+                min-width: 150px;
+                padding: 0px;
+                position: relative;
+    
+                .title-stars {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: 0 10px;
+
+                    ngb-rating.d-inline-flex {
+                        margin-top: -10px;
+                    }
+
+                    .card-title {
+                        font-size: 1rem;
+                        background: white;
+                        width: fit-content;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .star {
+        position: relative;
+        display: inline-block;
+        font-size: 23px;
+        color: #e2e2e2;
+    }
+    
+    .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: $heartColor;
+    }
+
+    .full {
+        color: $heartColor;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        min-width: 200px;
+    }
+}

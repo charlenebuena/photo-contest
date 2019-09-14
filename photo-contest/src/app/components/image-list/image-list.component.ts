@@ -5,7 +5,7 @@ import { Entry } from '../../shared/models/photo-structure';
 @Component({
     selector: 'app-image-list',
     templateUrl: './image-list.component.html',
-    styleUrls: ['./image-list.component.css']
+    styleUrls: ['./image-list.component.scss']
 })
 export class ImageListComponent implements OnInit{
     ctr = null;

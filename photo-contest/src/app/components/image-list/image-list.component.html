@@ -3,12 +3,12 @@
 
     <div class="user-btns" *ngIf="!showPhotos && !isLoading">
         <button type="button" class="btn btn-lg btn-primary new-user" (click)="onNewUser()">New User</button>
-        <button type="button" class="btn btn-lg btn-primary" *ngIf="showCurrentUser" (click)="onCurrentUser()">Current User</button>
+        <button type="button" class="btn btn-lg btn-primary current-user" *ngIf="showCurrentUser" (click)="onCurrentUser()">Current User</button>
     </div>
 
     <div class="vote-btns" *ngIf="showPhotos">
         <button type="button" class="btn btn-outline-secondary" (click)="showPhotos = !showPhotos">BACK</button>
-        <button type="button" class="btn btn-primary" (click)="onSubmitVotes()">SUBMIT VOTES</button>
+        <button type="button" class="btn btn-primary submit-votes" (click)="onSubmitVotes()">SUBMIT VOTES</button>
     </div>
 
     <div class="cards-holder row" *ngIf="showPhotos">
