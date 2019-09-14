@@ -20,23 +20,20 @@ export class ImageListComponent implements OnInit{
     ){}
 
     ngOnInit() {
-        localStorage.removeItem('userRatings');
-        localStorage.removeItem('totalRatings');
-
         this.showCurrentUser = localStorage.getItem('userRatings') ? true : false;
         this.photos = localStorage.getItem('userRatings') ? JSON.parse(localStorage.getItem('userRatings')) : null;
         this.totalRatings = localStorage.getItem('totalRatings') ? JSON.parse(localStorage.getItem('totalRatings')) : null;
     }
 
     getPhotos() {
-        this.isLoading = true;
         this.photoService.getPhotos().subscribe(
             resp => {
                 this.photos = resp;
                 this.photos.map(obj => { obj['photoRating'] = 0; return obj});
+                this.photos.map(obj => { obj['showDetails'] = false; return obj});
             }, 
             err => console.error(err),
-            () => this.isLoading = false
+            () => this.sortPhotosByName()
         );
     }
 
@@ -65,8 +62,8 @@ export class ImageListComponent implements OnInit{
     }
 
     onNewUser() {
+        this.isLoading = true;
         this.getPhotos();
-        this.showPhotos = true;
     }
 
     onSubmitVotes() {
@@ -83,4 +80,23 @@ export class ImageListComponent implements OnInit{
         this.showPhotos = false;
     }
 
+    /*
+     * Ascending Order
+     */
+    sortPhotosByName() {
+        var hold = null;
+
+        for (let x = hold = 0; x < this.photos.length; x++) {
+            for (let y = 0; y < this.photos.length; y++) {
+                if (this.photos[y].title > this.photos[x].title) {
+                    hold = this.photos[x];
+                    this.photos[x] = this.photos[y];
+                    this.photos[y] = hold;
+                }
+            }
+        }
+
+        this.showPhotos = true;        
+        this.isLoading = false;
+    }
 }

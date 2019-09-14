@@ -11,6 +11,9 @@
 
     .card-title {
         font-size: 1rem;
+        background: white;
+        width: fit-content;
+        padding: 5px;
     }
 
     .cont {
@@ -19,6 +22,14 @@
 
     .col-sm-2 {
         padding: 0px;
+        position: relative;
+    }
+
+    .title-stars {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 10px;
     }
 
     .spinner-border.m-5 {
