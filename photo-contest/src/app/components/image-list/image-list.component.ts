@@ -8,7 +8,7 @@ import { Entry } from '../../shared/models/photo-structure';
     styleUrls: ['./image-list.component.css']
 })
 export class ImageListComponent implements OnInit{
-    currentUserRatings = null;
+    ctr = null;
     showCurrentUser = false;
     isLoading = false;    
     photos: Entry[] | any  = [];
@@ -20,12 +20,12 @@ export class ImageListComponent implements OnInit{
     ){}
 
     ngOnInit() {
+        localStorage.removeItem('userRatings');
+        localStorage.removeItem('totalRatings');
+
         this.showCurrentUser = localStorage.getItem('userRatings') ? true : false;
         this.photos = localStorage.getItem('userRatings') ? JSON.parse(localStorage.getItem('userRatings')) : null;
         this.totalRatings = localStorage.getItem('totalRatings') ? JSON.parse(localStorage.getItem('totalRatings')) : null;
-
-        console.log(this.photos);
-        console.log(this.totalRatings);
     }
 
     getPhotos() {
@@ -40,8 +40,18 @@ export class ImageListComponent implements OnInit{
         );
     }
 
-    onChangeRate() {
-        localStorage.setItem('userRatings', JSON.stringify(this.photos));
+    onChangeRate(index) {
+        this.ctr = 0;
+        for (let photo of this.photos) {
+            this.ctr += photo.photoRating > 0 ? 1 : 0;
+        }
+
+        if (this.ctr > 10) {
+            this.photos[index].photoRating = 0;
+            alert('You can only vote up to 10 photos');
+        } else {
+            localStorage.setItem('userRatings', JSON.stringify(this.photos));
+        }
     }
 
     onClearVote(index) {
@@ -55,9 +65,22 @@ export class ImageListComponent implements OnInit{
     }
 
     onNewUser() {
-        localStorage.removeItem('userRatings');
         this.getPhotos();
         this.showPhotos = true;
+    }
+
+    onSubmitVotes() {
+        this.totalRatings = [];
+        if (localStorage.getItem('totalRatings')) {
+            this.totalRatings = JSON.parse(localStorage.getItem('totalRatings'));
+            this.totalRatings.push(JSON.parse(localStorage.getItem('userRatings')));
+            localStorage.setItem('totalRatings', JSON.stringify(this.totalRatings));
+        } else {
+            localStorage.setItem('totalRatings', JSON.stringify( [JSON.parse(localStorage.getItem('userRatings'))] ) );
+        }
+
+        localStorage.removeItem('userRatings');
+        this.showPhotos = false;
     }
 
 }

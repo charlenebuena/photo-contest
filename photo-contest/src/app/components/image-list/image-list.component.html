@@ -6,7 +6,11 @@
         <button type="button" class="btn btn-lg btn-primary" *ngIf="showCurrentUser" (click)="onCurrentUser()">Current User</button>
     </div>
 
-    <button type="button" class="btn btn-outline-secondary" *ngIf="showPhotos" (click)="showPhotos = !showPhotos">BACK</button>
+    <div class="vote-btns" *ngIf="showPhotos">
+        <button type="button" class="btn btn-outline-secondary" (click)="showPhotos = !showPhotos">BACK</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmitVotes()">SUBMIT VOTES</button>
+    </div>
+
     <div class="cards-holder row" *ngIf="showPhotos">
         <div class="card col-sm-2" style="width: 18rem;"  *ngFor="let photo of photos; let i=index">
             <img src="{{'../../../assets/images/photo-' + photo._id +  '.jpg'}}" class="card-img-top" alt="...">
@@ -16,7 +20,7 @@
                         [(rate)]="photo.photoRating" 
                         [starTemplate]="t" 
                         [readonly]="false"
-                        (rateChange)="onChangeRate()"
+                        (rateChange)="onChangeRate(i)"
                         max="5">
                     </ngb-rating>
                     <h5 class="card-title">{{photo.title}}</h5>
