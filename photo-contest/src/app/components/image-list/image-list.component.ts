@@ -20,6 +20,8 @@ export class ImageListComponent implements OnInit{
     ){}
 
     ngOnInit() {
+        // localStorage.removeItem('userRatings');
+        // localStorage.removeItem('totalRatings');
         this.showCurrentUser = localStorage.getItem('userRatings') ? true : false;
         this.photos = localStorage.getItem('userRatings') ? JSON.parse(localStorage.getItem('userRatings')) : null;
         this.totalRatings = localStorage.getItem('totalRatings') ? JSON.parse(localStorage.getItem('totalRatings')) : null;

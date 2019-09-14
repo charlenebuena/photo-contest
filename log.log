@@ -1,0 +1,13 @@
+* f8cf636 : sort images by name
+* 37a1d56 : minimum of 10 photos vote
+* 1428cfa : responsive
+* e7b5d33 : voting for new and current users
+* 8471dfe : current user voting
+* db0e415 : fontawesome
+* 83c931a : display images
+* 2ade8d8 : stopped working on creating service
+* 0d1bb18 : image-list and winners components
+* 23105a5 : added 30 images in assets
+* 46c2dcf : removed readme init
+* 182ef27 : angular project
+* 89baa82 : Initial commit

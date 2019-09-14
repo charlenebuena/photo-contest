@@ -21,4 +21,12 @@ export class AppComponent {
         this.showWinners = true;
         this.showImageList = false;
     }
+
+    /************************************
+
+    git log --pretty=format:'%h : %s' --graph > log.log
+
+    *************************************/
+
+
 }

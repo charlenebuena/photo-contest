@@ -1,0 +1,21 @@
+@import '../../../styles';
+
+.jumbotron {
+    border-radius: 0 !important;
+    background: $indigoheader;
+    margin: 0px;
+    color: $textColor;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border: $primary;
+
+    &:hover {
+        background-color: $primaryHover;
+    }
+
+    &.new-voter {
+        margin-right: 5px;
+    }
+}
