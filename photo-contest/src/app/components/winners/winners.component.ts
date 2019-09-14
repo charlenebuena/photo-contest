@@ -24,6 +24,7 @@ export class WinnersComponent implements OnInit {
         // localStorage.removeItem('totalRatings');
 
         if (localStorage.getItem('totalRatings')) {
+            console.log(JSON.parse(localStorage.getItem('totalRatings')));
             this.isLoading = true;
             this.photos = JSON.parse(localStorage.getItem('totalRatings'));
             this.addPhotoRatings();

@@ -69,17 +69,27 @@ export class ImageListComponent implements OnInit{
     }
 
     onSubmitVotes() {
+        let ctr = 0;
         this.totalRatings = [];
-        if (localStorage.getItem('totalRatings')) {
-            this.totalRatings = JSON.parse(localStorage.getItem('totalRatings'));
-            this.totalRatings.push(JSON.parse(localStorage.getItem('userRatings')));
-            localStorage.setItem('totalRatings', JSON.stringify(this.totalRatings));
-        } else {
-            localStorage.setItem('totalRatings', JSON.stringify( [JSON.parse(localStorage.getItem('userRatings'))] ) );
+
+        for (let photo of this.photos) {
+            ctr += photo.photoRating === 0 ? 1 : 0;
         }
 
-        localStorage.removeItem('userRatings');
-        this.showPhotos = false;
+        if (ctr !== this.photos.length) {
+            if (localStorage.getItem('totalRatings')) {
+                this.totalRatings = JSON.parse(localStorage.getItem('totalRatings'));
+                this.totalRatings.push(JSON.parse(localStorage.getItem('userRatings')));
+                localStorage.setItem('totalRatings', JSON.stringify(this.totalRatings));
+            } else {
+                localStorage.setItem('totalRatings', JSON.stringify( [JSON.parse(localStorage.getItem('userRatings'))] ) );
+            }
+    
+            localStorage.removeItem('userRatings');
+            this.showPhotos = false;
+        } else {
+            alert('You can\'t send empty votes');
+        }
     }
 
     /*

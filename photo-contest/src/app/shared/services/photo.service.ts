@@ -16,8 +16,8 @@ export class PhotoService {
 
     getPhotos(): Observable<Entry[]> {
         return this.http.get<Entry[]>(this.photosUrl).pipe(
-            tap(_ => console.log('fetched heroes')),
-            catchError(this.handleError<Entry[]>('getHeroes', []))
+            tap(() => console.log('Fetched Photos.')),
+            catchError(this.handleError<Entry[]>('getPhotos', []))
         );
     }
 
