@@ -18,4 +18,5 @@ If only an error occurs upon running `ng serve`, proceed to step number 3
 
 Input the command `npm install -g @angular/cli` to install Angular CLI
 
+![](./src/assets/image.png)
 
